@@ -1,0 +1,153 @@
+### Get all cakes
+
+GET http://127.0.0.1:8000/cakes/
+Authorization: Token a4d5ada4f398d0f75e9b11323ad33197a421f763
+
+### Creating a cakes
+
+### Creating a cake
+
+POST http://127.0.0.1:8000/cakes/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkyMzA3ODg3LCJpYXQiOjE3OTIyMjE0ODcsImp0aSI6IjNkNDY1NTliODQ3NTQ3YzQ5NTQwNTQ4YTNhNzQyOTA2IiwidXNlcl9pZCI6IjIifQ.VF7E3xr2oJF949WCCpx2o9rZ-oLkMnEP51iJw4bNLsA
+Content-Type: multipart/form-data; boundary=abcd
+
+--abcd
+Content-Disposition: form-data; name="name"
+
+Butterscotch Cake
+--abcd
+Content-Disposition: form-data; name="description"
+
+Sweety Yummy Rich in Nuts Cake
+--abcd
+Content-Disposition: form-data; name="category"
+
+1
+--abcd
+Content-Disposition: form-data; name="weight"
+
+1 
+--abcd
+Content-Disposition: form-data; name="shape"
+
+1
+--abcd
+Content-Disposition: form-data; name="price"
+
+1250
+--abcd
+Content-Disposition: form-data; name="photo"; filename="Screenshot_2026-08-28_212241.png"
+Content-Type: image/jpeg
+
+< C:\Users\DELL\Desktop\luminar\Django projects\cake project\cakes/media\cake-image\Screenshot_2026-08-28_212241.png
+--abcd--
+
+### cake details api
+
+GET http://127.0.0.1:8000/cakes/3/
+
+### cake update api
+
+PATCH http://127.0.0.1:8000/cakes/3/
+Content-Type: multipart/form-data; boundary=abcd
+
+--abcd
+Content-Disposition: form-data; name="name"
+
+Vancho Cake
+--abcd--
+### cake details api
+
+DELETE http://127.0.0.1:8000/cakes/2/
+--abcd--
+
+### get auth token
+
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"user",
+    "password":"user"
+}
+
+### Get all categories
+GET http://127.0.0.1:8000/categories/
+
+### create a category
+
+POST http://127.0.0.1:8000/categories/
+# Authorization: Basic user user
+Content-Type: application/json
+
+{
+    "name":"wedding cake"
+}
+
+### Get a category
+GET http://127.0.0.1:8000/categories/1/
+
+### update a category
+PATCH http://127.0.0.1:8000/categories/1/
+Content-Type: application/json
+
+{
+    "name":"Cup Cake"
+}
+
+### Get all shape
+GET http://127.0.0.1:8000/shape/
+
+### create a shape
+
+POST http://127.0.0.1:8000/shape/
+# Authorization: Basic user user
+Content-Type: application/json
+
+{
+    "name":"Round"
+}
+
+### Get a shape
+GET http://127.0.0.1:8000/shape/1/
+
+### update a shape
+PATCH http://127.0.0.1:8000/shape/1/
+Content-Type: application/json
+
+{
+    "name":"ovel"
+}
+
+### Get all weight
+GET http://127.0.0.1:8000/weight/
+
+### create a weight
+
+POST http://127.0.0.1:8000/weight/
+# Authorization: Basic user user
+Content-Type: application/json
+
+{
+    "name":"2 kg"
+}
+
+### Get a shape
+GET http://127.0.0.1:8000/weight/1/
+
+### update a shape
+PATCH http://127.0.0.1:8000/weight/1/
+Content-Type: application/json
+
+{
+    "name":"3 kg"
+}
+
+### user creation
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username":"phelix2314@mailinator.com",
+    "first_name":"phelix Cameroon"
+}
